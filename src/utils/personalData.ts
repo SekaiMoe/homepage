@@ -1,49 +1,58 @@
 import { PersonalInfo } from '../types/personalInfo';
 
 export const personalInfo: PersonalInfo = {
-  name: "张三",
-  title: "全栈开发工程师",
+  name: "About SekaiMoe(A.K.A 二葉琉璃)",
+  title: "我萌故我在！！！",
   avatar: "/placeholder.svg?height=150&width=150",
-  bio: "热爱编程，专注于Web开发和人工智能领域。",
-  skills: ["JavaScript", "TypeScript", "Vue.js", "Node.js", "Python", "Docker"],
+  bio: "Life is short, creative more.",
+  skills: ["JavaScript", "TypeScript", "C++", "Makefile", "Python", "Docker"],
   about: [
-    "我是一名充满激情的全栈开发工程师，拥有5年的行业经验。",
-    "我热衷于创造直观、高效的用户界面和强大的后端系统。",
+    "我是一名梦想成为马猴烧酒的半吊子开发者。",
+    "我热衷于编写 C++ 程序和在不同的设备上运行 Linux 系统。",
     "在空闲时间，我喜欢参与开源项目和技术社区活动。"
   ],
-  projects: [
-    {
-      name: "个人博客系统",
-      description: "使用Vue.js和Node.js构建的响应式个人博客系统",
-      link: "https://github.com/yourusername/blog-project"
-    },
-    {
-      name: "任务管理应用",
-      description: "基于React Native的跨平台任务管理移动应用",
-      link: "https://github.com/yourusername/task-manager-app"
-    },
-    {
-      name: "AI聊天机器人",
-      description: "使用Python和自然语言处理技术开发的智能聊天机器人",
-      link: "https://github.com/yourusername/ai-chatbot"
-    }
-  ],
+  projects: {
+    created: [
+      {
+        name: "Kernel Build Action",
+        description: "使用 Github Action 自动构建内核的操作",
+        link: "https://github.com/dabao1955/kernel_build_action"
+      },
+      {
+        name: "志愿分数查询",
+        description: "使用 C++17 和 Vue 构建的志愿分数查询系统",
+        link: "https://github.com/SekaiMoe/985211helper-liaoning2025"
+      }
+    ],
+    participated: [
+      {
+        name: "KernelSU",
+        description: "参与了网站维基，管理器的日语和荷兰语翻译的编写",
+        link: "https://github.com/tiann/KernelSU"
+      },
+      {
+        name: "kawaii-gcc",
+        description: "参与了部分翻译的编写",
+        link: "https://github.com/Bill-Haku/kawaii-gcc"
+      }
+    ]
+  },
   links: [
     {
-      name: "个人博客",
-      url: "https://yourblog.com"
+      name: "Blog",
+      url: "https://dpkg123.site"
     },
     {
       name: "GitHub",
-      url: "https://github.com/yourusername"
+      url: "https://github.com/dabao1955"
     },
     {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername"
+      name: "Bilibili",
+      url: "https://space.bilibili.com/400629023"
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com/yourusername"
+      name: "Telegram",
+      url: "https://t.me/dabao1955"
     }
   ]
 };

@@ -1,3 +1,9 @@
+export interface Project {
+  name: string;
+  description: string;
+  link: string;
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
@@ -6,10 +12,9 @@ export interface PersonalInfo {
   skills: string[];
   about: string[];
   projects: {
-    name: string;
-    description: string;
-    link: string;
-  }[];
+    created: Project[];
+    participated: Project[];
+  };
   links: {
     name: string;
     url: string;

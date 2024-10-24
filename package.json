@@ -1,12 +1,13 @@
 {
-  "name": "homepage-new",
-  "private": true,
-  "version": "0.0.0",
+  "name": "homepage",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rm -rf *.tsbuildinfo && rm -rf dist"
   },
   "dependencies": {
     "@material/button": "^14.0.0",

@@ -1,17 +1,36 @@
 <template>
   <div class="personal-projects">
     <h2 class="md3-headline-medium">个人项目</h2>
-    <ul class="md3-list">
-      <li v-for="(project, index) in info.projects" :key="project.name" class="md3-list-item" :style="{ animationDelay: `${index * 0.1}s` }">
-        <div class="md3-list-item-content">
-          <span class="md3-list-item-title">{{ project.name }}</span>
-          <span class="md3-list-item-secondary">{{ project.description }}</span>
-        </div>
-        <a :href="project.link" target="_blank" class="md3-icon-button">
-          <span class="material-icons">open_in_new</span>
-        </a>
-      </li>
-    </ul>
+    
+    <section class="project-section">
+      <h3 class="md3-headline-small">我创建的项目</h3>
+      <ul class="md3-list">
+        <li v-for="(project, index) in info.projects.created" :key="project.name" class="md3-list-item" :style="{ animationDelay: `${index * 0.1}s` }">
+          <div class="md3-list-item-content">
+            <span class="md3-list-item-title">{{ project.name }}</span>
+            <span class="md3-list-item-secondary">{{ project.description }}</span>
+          </div>
+          <a :href="project.link" target="_blank" class="md3-icon-button">
+            <span class="material-icons">open_in_new</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h3 class="md3-headline-small">我参与的项目</h3>
+      <ul class="md3-list">
+        <li v-for="(project, index) in info.projects.participated" :key="project.name" class="md3-list-item" :style="{ animationDelay: `${index * 0.1}s` }">
+          <div class="md3-list-item-content">
+            <span class="md3-list-item-title">{{ project.name }}</span>
+            <span class="md3-list-item-secondary">{{ project.description }}</span>
+          </div>
+          <a :href="project.link" target="_blank" class="md3-icon-button">
+            <span class="material-icons">open_in_new</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
 
@@ -34,7 +53,7 @@ export default defineComponent({
 .personal-projects {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   animation: fadeIn 0.5s ease-out;
 }
 
@@ -51,6 +70,18 @@ export default defineComponent({
 
 .md3-headline-medium {
   font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.md3-headline-small {
+  font-size: 24px;
   font-weight: 400;
   margin: 0 0 16px;
 }

@@ -11,7 +11,9 @@
         :class="{ active: currentTab === 'AboutMe' }"
         class="md3-bottom-nav-item"
       >
-        <span class="material-icons">person</span>
+        <span class="md3-bottom-nav-icon-wrapper">
+          <span class="material-icons">person</span>
+        </span>
         <span class="md3-bottom-nav-label">关于我</span>
       </button>
       <button 
@@ -19,7 +21,9 @@
         :class="{ active: currentTab === 'PersonalProjects' }"
         class="md3-bottom-nav-item"
       >
-        <span class="material-icons">work</span>
+        <span class="md3-bottom-nav-icon-wrapper">
+          <span class="material-icons">work</span>
+        </span>
         <span class="md3-bottom-nav-label">个人项目</span>
       </button>
       <button 
@@ -27,7 +31,9 @@
         :class="{ active: currentTab === 'OtherLinks' }"
         class="md3-bottom-nav-item"
       >
-        <span class="material-icons">link</span>
+        <span class="md3-bottom-nav-icon-wrapper">
+          <span class="material-icons">link</span>
+        </span>
         <span class="md3-bottom-nav-label">其他链接</span>
       </button>
     </nav>
@@ -103,15 +109,29 @@ export default defineComponent({
   font-size: 14px;
   padding: 8px 16px;
   cursor: pointer;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s;
 }
 
 .md3-bottom-nav-item:hover {
-  transform: translateY(-2px);
+  color: var(--md-sys-color-primary);
 }
 
 .md3-bottom-nav-item.active {
   color: var(--md-sys-color-primary);
+}
+
+.md3-bottom-nav-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+}
+
+.md3-bottom-nav-item.active .md3-bottom-nav-icon-wrapper {
+  background-color: var(--md-sys-color-secondary-container);
 }
 
 .md3-bottom-nav-label {
