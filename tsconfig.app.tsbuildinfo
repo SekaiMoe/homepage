@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/types/personalInfo.ts","./src/utils/personalData.ts","./src/App.vue","./src/components/AboutMe.vue","./src/components/OtherLinks.vue","./src/components/PersonalInfo.vue","./src/components/PersonalProjects.vue"],"version":"5.6.3"}

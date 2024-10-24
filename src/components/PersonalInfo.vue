@@ -1,17 +1,34 @@
 <template>
   <div class="md3-layout">
     <main class="md3-main-content">
-      <component :is="currentTab" :info="info" />
+      <transition name="fade" mode="out-in">
+        <component :is="currentTab" :info="info" :key="currentTab" />
+      </transition>
     </main>
     <nav class="md3-bottom-nav">
-      <button @click="currentTab = 'AboutMe'" :class="{ active: currentTab === 'AboutMe' }">
-        关于我
+      <button 
+        @click="currentTab = 'AboutMe'" 
+        :class="{ active: currentTab === 'AboutMe' }"
+        class="md3-bottom-nav-item"
+      >
+        <span class="material-icons">person</span>
+        <span class="md3-bottom-nav-label">关于我</span>
       </button>
-      <button @click="currentTab = 'PersonalProjects'" :class="{ active: currentTab === 'PersonalProjects' }">
-        个人项目
+      <button 
+        @click="currentTab = 'PersonalProjects'" 
+        :class="{ active: currentTab === 'PersonalProjects' }"
+        class="md3-bottom-nav-item"
+      >
+        <span class="material-icons">work</span>
+        <span class="md3-bottom-nav-label">个人项目</span>
       </button>
-      <button @click="currentTab = 'OtherLinks'" :class="{ active: currentTab === 'OtherLinks' }">
-        其他链接
+      <button 
+        @click="currentTab = 'OtherLinks'" 
+        :class="{ active: currentTab === 'OtherLinks' }"
+        class="md3-bottom-nav-item"
+      >
+        <span class="material-icons">link</span>
+        <span class="md3-bottom-nav-label">其他链接</span>
       </button>
     </nav>
   </div>
@@ -76,17 +93,43 @@ export default defineComponent({
   padding: 8px 0;
 }
 
-.md3-bottom-nav button {
+.md3-bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: none;
   border: none;
   color: var(--md-sys-color-on-surface);
   font-size: 14px;
   padding: 8px 16px;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.md3-bottom-nav button.active {
+.md3-bottom-nav-item:hover {
+  transform: translateY(-2px);
+}
+
+.md3-bottom-nav-item.active {
   color: var(--md-sys-color-primary);
+}
+
+.md3-bottom-nav-label {
+  margin-top: 4px;
+}
+
+.material-icons {
+  font-size: 24px;
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

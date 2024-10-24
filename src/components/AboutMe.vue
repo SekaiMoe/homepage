@@ -46,6 +46,18 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 24px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .md3-header {
@@ -75,6 +87,11 @@ export default defineComponent({
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 16px;
+  transition: transform 0.3s ease;
+}
+
+.md3-avatar:hover {
+  transform: scale(1.05);
 }
 
 .md3-avatar img {
@@ -102,6 +119,12 @@ export default defineComponent({
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md3-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .md3-card {
@@ -109,6 +132,11 @@ export default defineComponent({
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: box-shadow 0.3s ease;
+}
+
+.md3-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .md3-headline-small {

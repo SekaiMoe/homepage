@@ -2,7 +2,7 @@
   <div class="personal-projects">
     <h2 class="md3-headline-medium">个人项目</h2>
     <ul class="md3-list">
-      <li v-for="project in info.projects" :key="project.name" class="md3-list-item">
+      <li v-for="(project, index) in info.projects" :key="project.name" class="md3-list-item" :style="{ animationDelay: `${index * 0.1}s` }">
         <div class="md3-list-item-content">
           <span class="md3-list-item-title">{{ project.name }}</span>
           <span class="md3-list-item-secondary">{{ project.description }}</span>
@@ -35,6 +35,18 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 16px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .md3-headline-medium {
@@ -55,6 +67,19 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation: slideIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .md3-list-item:last-child {
@@ -82,6 +107,11 @@ export default defineComponent({
   cursor: pointer;
   padding: 8px;
   color: var(--md-sys-color-primary);
+  transition: transform 0.2s ease;
+}
+
+.md3-icon-button:hover {
+  transform: scale(1.1);
 }
 
 .material-icons {
